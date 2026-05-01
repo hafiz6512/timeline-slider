@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>TimeLine Slider</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	
+	
+
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/flexslider.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!-- js -->
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider-min.js"></script>
+
+</head>
+
+<body>
+	
+	<div style="height: 100px;"></div>
+
+	<section class="timeline">
+		<div class="container">
+			<h2>A History of Innovation</h2>
+			<div id="timeLine" class="flexslider">
+			  	<ul class="slides">
+			    	<li>
+			    		<div class="timeline_item">
+			    			<img src="images/slide_img1.jpg" alt="slide image">
+			    			<div class="timeline_caption">
+			    				<h3>OCC Acquisitions </h3>
+			    				<p>2009 Applied Optical Systems which went on to become the OCC Harsh Environment and Specialty Connectivity Manufacturing Facility</p>
+			    			</div>
+			    		</div>
+			    	</li>
+			    	<li>
+			    		<div class="timeline_item">
+			    			<img src="images/slide_img1.jpg" alt="slide image">
+			    			<div class="timeline_caption">
+			    				<h3>OCC Acquisitions </h3>
+			    				<p>2009 Applied Optical Systems which went on to become the OCC Harsh Environment and Specialty Connectivity Manufacturing Facility</p>
+			    			</div>
+			    		</div>
+			    	</li>
+			    	<li>
+			    		<div class="timeline_item">
+			    			<img src="images/slide_img1.jpg" alt="slide image">
+			    			<div class="timeline_caption">
+			    				<h3>OCC Acquisitions </h3>
+			    				<p>2009 Applied Optical Systems which went on to become the OCC Harsh Environment and Specialty Connectivity Manufacturing Facility</p>
+			    			</div>
+			    		</div>
+			    	</li>
+			    	<li>
+			    		<div class="timeline_item">
+			    			<img src="images/slide_img1.jpg" alt="slide image">
+			    			<div class="timeline_caption">
+			    				<h3>OCC Acquisitions </h3>
+			    				<p>2009 Applied Optical Systems which went on to become the OCC Harsh Environment and Specialty Connectivity Manufacturing Facility</p>
+			    			</div>
+			    		</div>
+			    	</li>
+			    	<li>
+			    		<div class="timeline_item">
+			    			<img src="images/slide_img1.jpg" alt="slide image">
+			    			<div class="timeline_caption">
+			    				<h3>OCC Acquisitions </h3>
+			    				<p>2009 Applied Optical Systems which went on to become the OCC Harsh Environment and Specialty Connectivity Manufacturing Facility</p>
+			    			</div>
+			    		</div>
+			    	</li>
+			  	</ul>
+			</div>
+
+			<div class="timeline_bar">
+				<div class="bs-wizard">
+				    <div class="bs-wizard-step" id="p_0">
+						<div class="progress"></div>
+						<a href="javascript:;" class="bs-wizard-dot"></a>
+				    </div>
+            
+				    <div class="bs-wizard-step" id="p_1">
+				    	<div class="progress"></div>
+				    	<a href="javascript:;" class="bs-wizard-dot"></a>
+				    </div>
+				    
+				    <div class="bs-wizard-step" id="p_2"><!-- complete -->
+						<div class="progress"></div>
+						<a href="javascript:;" class="bs-wizard-dot"></a>
+				    </div>
+				    
+				    <div class="bs-wizard-step" id="p_3"><!-- complete -->
+						<div class="progress"></div>
+						<a href="javascript:;" class="bs-wizard-dot"></a>
+				    </div>
+				    
+				    <div class="bs-wizard-step" id="p_4"><!-- active -->
+						<div class="progress"><div class="progress-bar"></div></div>
+						<a href="javascript:;" class="bs-wizard-dot"></a>
+				    </div>
+            
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div style="height: 100px;"></div>
+
+
+	<script type="text/javascript">
+
+		$( document ).ready(function() {
+		    $('#timeLine').flexslider({
+				animation: "slide",
+				slideshow: false,
+				controlNav: false,
+				directionNav: true,
+				smoothHeight: true,
+				prevText: " ",
+				nextText: " ",
+				after: function(slider) {
+		        	changeColor(slider.currentSlide);
+		        }
+			});
+
+
+			// flexslider change
+		    $('.bs-wizard-dot').click(function(){
+		        var data = $(this).parent();
+		        var pos = parseInt(data.attr('id').replace('p_',''));
+		        changeColor(pos);
+		        $("#timeLine").data('flexslider').flexAnimate(pos, true);
+		    })
+
+		    function changeColor(pos) {
+		        for (i = 0; i <= 4; i++) { 
+		            $('#p_'+i+'').find('.progress').css('background-color', '');
+		            $('#p_'+i+'').find('.bs-wizard-dot').css('background-color', '');
+		        }
+		        for (i = 0; i < pos+1; i++) { 
+		            if (i != 0) {
+		                var j = i-1;
+		            }
+		            $('#p_'+j+'').find('.progress').css('background-color', '#b12024');
+		            $('#p_'+i+'').find('.bs-wizard-dot').css('background-color', '#b12024');
+		        }
+		    }
+		});
+
+	</script>
+
+</body>
+</html>

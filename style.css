@@ -1,0 +1,257 @@
+
+/*--------------- Main Styles ---------------------*/
+/** Common & Reset style **/
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+body{
+	background: #fff;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+	color: #545454;
+	line-height: normal;
+}
+
+
+*, *:after, *::before{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+
+/** timeline section **/
+.timeline:after,
+.timeline:before{
+	content: " ";
+	display: table;
+	clear: both;
+}
+
+.timeline{
+	display: block;
+	position: relative;
+	text-align: center;
+}
+
+.timeline .container{
+	margin: 0 auto;
+	position: relative;
+	width: 100%;
+	max-width: 1170px;
+	padding: 0 15px;
+	display: block;
+}
+
+.timeline h2{
+	font-size: 40px;
+	font-family: Arial;
+	line-height: 1.2;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #223140;
+	padding: 0;
+	margin: 0 0 20px;
+}
+
+#timeLine{
+	padding: 0;
+	margin: 0;
+	border: none;
+	border-radius: 0;
+}
+
+.timeline_item{
+	width: 100%;
+	max-width: 570px;
+	display: inline-block;
+}
+.timeline_item .timeline_caption{
+	display: inline-block;
+	width: 100%;
+	text-align: left;
+	color: #223140;
+}
+.timeline_caption h3{
+	color: #223140;
+	padding: 0;
+	margin: 0;
+	font-size: 30px;
+	line-height: 1.2;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+.timeline_caption p{
+	padding: 0;
+	margin: 0 0 10px;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+
+/** flexslider direction nav customize **/
+.flex-direction-nav a{
+	height: 80px;
+	width: 40px;
+	margin-top: -40px;
+	outline: none !important;
+}
+
+.flex-direction-nav .flex-prev,
+.flexslider:hover .flex-direction-nav .flex-prev{
+	left: 10px;
+    opacity: 1;
+    background: url(images/timeline_slider_left_nav_icon.png) no-repeat center center;
+    background-size: 100%;
+}
+.flex-direction-nav .flex-next,
+.flexslider:hover .flex-direction-nav .flex-next{
+	right: 10px;
+    opacity: 1;
+    background: url(images/timeline_slider_right_nav_icon.png) no-repeat center center;
+    background-size: 100%;
+}
+
+.flex-direction-nav a:before{
+	display: none;
+}
+
+.flex-control-nav{
+	position: relative;
+	display: block;
+	width: 100%;
+	max-width: 570px;
+	margin: 20px auto;
+	bottom: auto;
+}
+.flex-control-paging li{
+	width: 20%;
+	float: left;
+	display: block;
+	margin: 0;
+	position: relative;
+	overflow: hidden;
+}
+.flex-control-paging li:before{
+	content: " ";
+	height: 7px;
+	background: #223140;
+	width: 100%;
+	position: absolute;
+	left: 1px;
+	top: 50%;
+	margin-top: -4px;
+	z-index: -1;
+}
+.flex-control-paging li:last-child:before{
+	display: none;
+}
+.flex-control-paging li a{
+	height: 38px;
+	width: 38px;
+	background: #223140;
+	opacity: 1;
+	outline: none !important;
+	position: relative;
+	z-index: 2;
+}
+.flex-control-paging li a:hover,
+.flex-control-paging li a.flex-active{
+	opacity: 1;
+	background: #b12024;
+}
+
+/* custom timeline_bar */
+.timeline_bar{
+	position: relative;
+	max-width: 570px;
+	width: 100%;
+	margin: 20px auto 40px;
+	display: block;
+	padding: 0 40px 0 0;
+	height: 50px;
+}
+
+.bs-wizard{
+	position: relative;
+	display: block;
+	width: 100%;
+	max-width: 570px;
+	margin: 0 auto;
+	padding: 0;
+	border: 0 none;
+}
+.bs-wizard .bs-wizard-step{
+	position: relative;
+	float: left;
+	width: 25%;
+	padding: 0;
+}
+
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {
+	position: absolute; 
+	width: 38px; 
+	height: 38px; 
+	display: block; 
+	background: #223140; 
+	top: 25px; 
+	left: 0; 
+	margin-top: -19px; 
+	border-radius: 50%;
+
+	-webkit-transition: all 0.3s ease-in-out 0s;
+       -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+         -o-transition: all 0.3s ease-in-out 0s;
+            transition: all 0.3s ease-in-out 0s;
+} 
+
+.bs-wizard > .bs-wizard-step > .progress {
+	position: relative; 
+	background-color: #223140;
+	top: 1px; 
+	left: 1px;
+	margin-left: 18px; 
+	border-radius: 0px; 
+	height: 7px; 
+	box-shadow: none; 
+	margin: 20px 0;
+
+	-webkit-transition: all 0.3s ease-in-out 0s;
+       -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+         -o-transition: all 0.3s ease-in-out 0s;
+            transition: all 0.3s ease-in-out 0s;
+}
+
+
+.bs-wizard > .bs-wizard-step:last-child{
+	width: 40px;
+	position: absolute;
+	right: -40px;
+}
+.bs-wizard > .bs-wizard-step:last-child  > .progress {
+	width: 0%;
+}
+.bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ 
+	pointer-events: none; 
+}
+
+#p_0 a.bs-wizard-dot{
+	background: #b12024 !important;
+}
+
+
+@media only screen and (max-width: 480px){
+	.flex-direction-nav a{
+		height: 60px;
+		width: 30px;
+	}
+}
